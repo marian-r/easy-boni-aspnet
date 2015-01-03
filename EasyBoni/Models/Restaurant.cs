@@ -10,12 +10,19 @@ namespace EasyBoni.Models
     {
         [JsonProperty(PropertyName = "id")]
         public int ID { get; set; }
+
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
+
         [JsonProperty(PropertyName = "address")]
         public string Address { get; set; }
+
+        [JsonProperty(PropertyName = "coordinates")]
+        public float[] Coordinates { get; set; }
+
         [JsonProperty(PropertyName = "price")]
         public string Price { get; set; }
+
         public float? Rating { get; set; }
     }
 }
