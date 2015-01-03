@@ -9,6 +9,8 @@
     <div class="panel panel-primary">
         <div class="panel-heading">
             @Html.DisplayFor(modelItem => item.Name)
+
+            @Html.Partial("_RatingPartial", item)
         </div>
         <div class="panel-body">
             <address class="text-muted">@Html.DisplayFor(modelItem => item.Address)</address>

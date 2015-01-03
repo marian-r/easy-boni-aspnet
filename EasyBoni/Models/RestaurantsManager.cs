@@ -30,6 +30,17 @@ namespace EasyBoni.Models
                     restaurants = JsonConvert.DeserializeObject<List<Restaurant>>(json);
                 }
 
+                RatingsManager ratingsManager = new RatingsManager();
+                var ratings = ratingsManager.FindForAllRestaurants();
+                foreach (var restaurant in restaurants)
+                {
+                    double rating;
+                    if (ratings.TryGetValue(restaurant.ID, out rating))
+                    {
+                        restaurant.Rating = Math.Round(rating);
+                    }
+                }
+
                 return restaurants;
             }
         }

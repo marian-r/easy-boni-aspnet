@@ -23,6 +23,6 @@ namespace EasyBoni.Models
         [JsonProperty(PropertyName = "price")]
         public string Price { get; set; }
 
-        public float? Rating { get; set; }
+        public double? Rating { get; set; }
     }
 }

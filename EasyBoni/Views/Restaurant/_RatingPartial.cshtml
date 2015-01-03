@@ -1,0 +1,23 @@
+﻿@model EasyBoni.Models.Restaurant
+
+<div id="rating-@Model.ID" class="pull-right">
+    @for (int i = 1; i <= 5; i++)
+    {
+        <a data-ajax="true" data-ajax-method="get" data-ajax-mode="replaceWith"
+           data-ajax-update="#rating-@Model.ID"
+           href="@Url.Action("AddRating", new {
+            id = Model.ID,
+            value = i
+        })" style="color: #fff">
+
+            @if (i <= Model.Rating)
+            {
+                <span class="star glyphicon glyphicon-star"></span>
+            }
+            else
+            {
+                <span class="star glyphicon glyphicon-star-empty"></span>
+            }
+        </a>
+    }
+</div>
