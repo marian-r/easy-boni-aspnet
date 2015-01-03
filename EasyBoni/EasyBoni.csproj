@@ -187,10 +187,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\MySQL\MySqlConfiguration.cs" />
     <Compile Include="Models\MySQL\MySqlHistoryContext.cs" />
     <Compile Include="Models\MySQL\MySqlInitializer.cs" />
+    <Compile Include="Models\Rating.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\RestaurantsManager.cs" />
