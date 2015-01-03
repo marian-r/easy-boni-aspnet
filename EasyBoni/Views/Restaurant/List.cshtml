@@ -4,20 +4,50 @@
     ViewBag.Title = "List";
 }
 
-@foreach (var item in Model)
-{
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            @Html.DisplayFor(modelItem => item.Name)
+@{ var ajaxOptions = new AjaxOptions
+    {
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "restaurantsList"
+    };
+}
 
-            @Html.Partial("_RatingPartial", item)
+@section header {
+    @using (Ajax.BeginForm("List", null, ajaxOptions, new {
+        @class = "navbar-form navbar-left",
+        @role = "search"
+    }))
+    {
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" name="query" value="">
         </div>
-        <div class="panel-body">
-            <address class="text-muted">@Html.DisplayFor(modelItem => item.Address)</address>
+        <button type="submit" class="btn btn-default">Go</button>
+    }
 
-            <div class="price-container pull-left">
-                Price: <span class="price text-primary">@Html.DisplayFor(modelItem => item.Price)</span>
-            </div>
-        </div>
-    </div>
+    <ul id="nav-order" class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Sort by
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li>
+                    @Ajax.ActionLink("Name", "List", new { order = "name" }, ajaxOptions)
+                </li>
+                <li>
+                    @Ajax.ActionLink("Price", "List", new { order = "price" }, ajaxOptions)
+                </li>
+                <li>
+                    @Ajax.ActionLink("Rating", "List", new { order = "rating" }, ajaxOptions)
+                </li>
+            </ul>
+        </li>
+    </ul>
+}
+<div id="restaurantsList">
+    @Html.Partial("_RestaurantsList", Model)
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/restaurants")
 }

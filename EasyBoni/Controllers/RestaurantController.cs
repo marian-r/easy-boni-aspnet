@@ -1,6 +1,7 @@
 ﻿using EasyBoni.Models;
 using Microsoft.AspNet.Identity.Owin;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,9 +20,34 @@ namespace EasyBoni.Controllers
         }
 
         // GET: Restaurant
-        public ActionResult List()
+        public ActionResult List(string query, RestaurantsOrder order = RestaurantsOrder.Name)
         {
-            return View(model.Restaurants);
+            IEnumerable<Restaurant> restaurants = model.Restaurants;
+
+            if (!string.IsNullOrWhiteSpace(query))
+            {
+                restaurants = restaurants.Where(r => r.Name.ToLower().Contains(query.ToLower()));
+            }
+
+            switch (order)
+            {
+                case RestaurantsOrder.Name:
+                    restaurants = restaurants.OrderBy(r => r.Name);
+                    break;
+                case RestaurantsOrder.Price:
+                    restaurants = restaurants.OrderBy(r => r.Price);
+                    break;
+                case RestaurantsOrder.Rating:
+                    restaurants = restaurants.OrderByDescending(r => r.Rating);
+                    break;
+            }
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_RestaurantsList", restaurants);
+            }
+
+            return View(restaurants);
         }
 
         public ActionResult GetList()

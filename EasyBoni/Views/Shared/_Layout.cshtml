@@ -24,6 +24,8 @@
                     <li>@Html.ActionLink("Map", "Map", "Restaurant")</li>
                     <li>@Html.ActionLink("List", "List", "Restaurant")</li>
                 </ul>
+                @RenderSection("header", required: false)
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
