@@ -1,0 +1,14 @@
+﻿@model IEnumerable<EasyBoni.Models.Restaurant>
+
+@{
+    ViewBag.Title = "Map";
+}
+
+<div class="map">
+    <div id="map-canvas" style="width: 100%; height: 100%"></div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("https://maps.google.com/maps/api/js?sensor=false")
+    @Scripts.Render("~/bundles/map")
+}

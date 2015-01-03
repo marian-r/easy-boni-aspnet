@@ -11,10 +11,20 @@ namespace EasyBoni.Controllers
     {
         private RestaurantsManager model = RestaurantsManager.Instance;
 
+        public ActionResult Map()
+        {
+            return View();
+        }
+
         // GET: Restaurant
         public ActionResult List()
         {
             return View(model.Restaurants);
+        }
+
+        public ActionResult GetList()
+        {
+            return Json(model.Restaurants, JsonRequestBehavior.AllowGet);
         }
     }
 }
