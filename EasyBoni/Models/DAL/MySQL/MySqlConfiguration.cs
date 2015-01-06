@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace EasyBoni.Models.MySQL
+namespace EasyBoni.Models.DAL.MySQL
 {
     public class MySqlConfiguration : DbConfiguration
     {

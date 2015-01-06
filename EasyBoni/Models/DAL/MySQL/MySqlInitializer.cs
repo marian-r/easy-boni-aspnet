@@ -2,7 +2,7 @@
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 
-namespace EasyBoni.Models.MySQL
+namespace EasyBoni.Models.DAL.MySQL
 {
     public class MySqlInitializer : IDatabaseInitializer<ApplicationDbContext>
     {

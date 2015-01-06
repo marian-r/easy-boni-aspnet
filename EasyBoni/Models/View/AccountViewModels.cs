@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace EasyBoni.Models
+namespace EasyBoni.Models.View
 {
     public class ExternalLoginConfirmationViewModel
     {

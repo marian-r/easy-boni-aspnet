@@ -1,8 +1,8 @@
-﻿using EasyBoni.Models.MySQL;
+﻿using System.Data.Entity;
+using EasyBoni.Models.DAL.MySQL;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System.Data.Entity;
 
-namespace EasyBoni.Models
+namespace EasyBoni.Models.DAL
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

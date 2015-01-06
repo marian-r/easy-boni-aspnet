@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNet.Identity.Owin;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity.Owin;
 
-namespace EasyBoni.Models
+namespace EasyBoni.Models.DAL
 {
     public class RatingsManager
     {

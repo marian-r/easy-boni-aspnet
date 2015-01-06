@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using EasyBoni.Models;
+using EasyBoni.Models.DAL;
 
 namespace EasyBoni
 {

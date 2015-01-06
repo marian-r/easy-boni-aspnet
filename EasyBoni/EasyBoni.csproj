@@ -185,18 +185,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\View\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
-    <Compile Include="Models\MySQL\MySqlConfiguration.cs" />
-    <Compile Include="Models\MySQL\MySqlHistoryContext.cs" />
-    <Compile Include="Models\MySQL\MySqlInitializer.cs" />
+    <Compile Include="Models\DAL\ApplicationDbContext.cs" />
+    <Compile Include="Models\DAL\MySQL\MySqlConfiguration.cs" />
+    <Compile Include="Models\DAL\MySQL\MySqlHistoryContext.cs" />
+    <Compile Include="Models\DAL\MySQL\MySqlInitializer.cs" />
     <Compile Include="Models\Rating.cs" />
-    <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\RatingsManager.cs" />
+    <Compile Include="Models\View\ManageViewModels.cs" />
+    <Compile Include="Models\DAL\RatingsManager.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\RestaurantsManager.cs" />
-    <Compile Include="Models\RestaurantsOrder.cs" />
+    <Compile Include="Models\View\RestaurantsOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

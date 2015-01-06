@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EasyBoni.Models;
+using EasyBoni.Models.View;
 
 namespace EasyBoni.Controllers
 {
